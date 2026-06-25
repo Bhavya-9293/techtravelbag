@@ -1,0 +1,14 @@
+{
+  "name": "tech-travel-bag-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "cd server && npm start",
+    "client": "cd client && npm start",
+    "server": "cd server && npm start"
+  }
+}

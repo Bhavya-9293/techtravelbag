@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — HABÄNE</title>
+  <meta name="description" content="Shop all HABÄNE smart duffels, backpacks, and travel gear." />
+  <link rel="icon" href="assets/brand/logo-white.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+    </defs>
+  </svg>
+
+  <!-- ============ RIBBON / MARQUEE ============ -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon__track">
+      <span>FREE SHIPPING ON EVERYTHING ✦ &nbsp;&nbsp; SMART DUFFELS — NOW LIVE ✦ &nbsp;&nbsp; CARRY THE CITY ✦ &nbsp;&nbsp; LIFETIME ZIPPER WARRANTY ✦ &nbsp;&nbsp; NEW DROP: METROPOLITAN SERIES ✦ &nbsp;&nbsp;</span>
+      <span>FREE SHIPPING ON EVERYTHING ✦ &nbsp;&nbsp; SMART DUFFELS — NOW LIVE ✦ &nbsp;&nbsp; CARRY THE CITY ✦ &nbsp;&nbsp; LIFETIME ZIPPER WARRANTY ✦ &nbsp;&nbsp; NEW DROP: METROPOLITAN SERIES ✦ &nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__links nav__links--left">
+      <a href="index.html#shop">Home</a>
+      <a href="index.html#smart">Smart Series</a>
+      <a href="index.html#showroom">3D Showroom</a>
+      <a href="index.html#lookbook">Lookbook</a>
+    </nav>
+
+    <a class="nav__logo" href="index.html">
+      <img src="assets/brand/logo-white.png" alt="Habäne" />
+    </a>
+
+    <nav class="nav__links nav__links--right">
+      <a href="index.html#story">Story</a>
+      <button class="nav__icon nav__iconbtn" id="searchBtn" aria-label="Search">⌕</button>
+      <a href="#" class="nav__icon" aria-label="Account">◍</a>
+      <button class="nav__icon nav__iconbtn nav__cart" id="cartBtn" aria-label="Cart">⛁ <em id="cartCount">0</em></button>
+    </nav>
+  </header>
+
+  <!-- mobile drawer -->
+  <div class="drawer" id="drawer">
+    <a href="index.html#shop">Home</a>
+    <a href="index.html#smart">Smart Series</a>
+    <a href="index.html#showroom">3D Showroom</a>
+    <a href="index.html#lookbook">Lookbook</a>
+    <a href="index.html#story">Story</a>
+    <a href="#" class="drawer__cart" id="drawerCartLink">Cart (<span class="drawer-cart-count">0</span>)</a>
+  </div>
+
+  <main id="top">
+    <!-- ============ SHOP HEADER ============ -->
+    <section class="shop-header">
+      <div class="shop-header__inner">
+        <h1 class="shop-header__title">SHOP ALL</h1>
+        <p class="shop-header__sub">Discover every carry. Filter. Sort. View as you like.</p>
+      </div>
+    </section>
+
+    <!-- ============ SHOP LAYOUT ============ -->
+    <div class="shop-layout">
+      <!-- LEFT SIDEBAR: FILTERS -->
+      <aside class="shop-sidebar" id="shopSidebar">
+        <div class="shop-sidebar__toggle">
+          <h3>FILTERS</h3>
+          <button class="sidebar-close" id="sidebarClose" aria-label="Close filters">✕</button>
+        </div>
+
+        <div class="filter-group">
+          <h4 class="filter-group__title">CATEGORY</h4>
+          <div class="filter-pills" id="filters">
+            <button class="pill is-active" data-filter="all">All</button>
+            <button class="pill" data-filter="duffel">Duffels</button>
+            <button class="pill" data-filter="backpack">Backpacks</button>
+            <button class="pill" data-filter="smart">Smart Series</button>
+            <button class="pill" data-filter="sling">Slings</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h4 class="filter-group__title">SORT BY</h4>
+          <select id="sortSelect" class="filter-select">
+            <option value="featured">Featured</option>
+            <option value="new">Newest</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT: PRODUCTS ============ -->
+      <section class="shop-content">
+        <!-- TOP BAR: VIEW TOGGLE & COUNT ============ -->
+        <div class="shop-topbar">
+          <span class="shop-topbar__count" id="resultCount">0 styles</span>
+          <div class="shop-topbar__views">
+            <button class="view-toggle is-active" id="gridView" aria-label="Grid view" title="Grid view">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+              </svg>
+            </button>
+            <button class="view-toggle" id="listView" aria-label="List view" title="List view">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="4" width="18" height="2"/><rect x="3" y="11" width="18" height="2"/><rect x="3" y="18" width="18" height="2"/>
+              </svg>
+            </button>
+          </div>
+          <button class="filter-toggle" id="filterToggle" aria-label="Toggle filters">⚙ FILTERS</button>
+        </div>
+
+        <!-- PRODUCT GRID/LIST ============ -->
+        <section class="shop-grid" id="shopGrid">
+          <!-- JS injects cards -->
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <img src="assets/brand/wordmark-silver.png" alt="Habäne" class="foot__word" />
+        <p class="foot__tag">Carry the city. Leave the baggage.</p>
+        <div class="foot__social">
+          <a href="#">IG</a><a href="#">TT</a><a href="#">YT</a><a href="#">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <p>© <span id="yr"></span> Habäne — All rights reserved.</p>
+      <div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping & Returns</a></div>
+    </div>
+  </footer>
+
+  <!-- ============ MODALS ============ -->
+  <!-- Quick View Modal -->
+  <div class="qv" id="quickView" aria-hidden="true">
+    <div class="qv__overlay" data-close></div>
+    <div class="qv__panel" role="dialog" aria-modal="true">
+      <button class="qv__close" data-close aria-label="Close">✕</button>
+      <div class="qv__media"><img id="qvImg" src="" alt="" /></div>
+      <div class="qv__body">
+        <span class="qv__cat" id="qvCat"></span>
+        <h3 class="qv__name" id="qvName"></h3>
+        <div class="qv__rate" id="qvRate"></div>
+        <div class="qv__price" id="qvPrice"></div>
+        <p class="qv__badge" id="qvBadge"></p>
+        <p class="qv__desc" id="qvDesc"></p>
+        <div class="qv__options">
+          <div>
+            <label>Color</label>
+            <div class="qv__colors" id="qvColors"></div>
+            <p class="qv__color-name" id="qvColorName"></p>
+          </div>
+          <div>
+            <label>Size</label>
+            <div class="qv__sizes" id="qvSizes"></div>
+          </div>
+          <div>
+            <label>Qty</label>
+            <div class="qv__qty-ctrl">
+              <button data-step="-1" aria-label="Decrease">−</button>
+              <span id="qvQty">1</span>
+              <button data-step="1" aria-label="Increase">+</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="qvAdd">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="cart" id="cart" aria-hidden="true">
+    <div class="cart__overlay" data-cart-close></div>
+    <div class="cart__panel" role="dialog" aria-modal="true">
+      <div class="cart__header">
+        <h2>YOUR BAG <span id="cartItems"></span></h2>
+        <button data-cart-close aria-label="Close cart">✕</button>
+      </div>
+      <div class="cart__body" id="cartBody"></div>
+      <div class="cart__empty" id="cartEmpty">
+        <p>Your bag is empty. Time to carry something cool.</p>
+      </div>
+      <div class="cart__foot" id="cartFoot">
+        <div class="cart__promo" id="cartPromo" hidden>
+          <p>Promo applied: <strong id="cartPromoChip"></strong></p>
+        </div>
+        <div class="cart__row">
+          <span>Subtotal</span><span id="cartSubtotal"></span>
+        </div>
+        <div class="cart__row" id="cartDiscRow" hidden>
+          <span>Discount</span><span id="cartDisc"></span>
+        </div>
+        <div class="cart__row cart__total" id="cartTotalRow" hidden>
+          <span>Total</span><span id="cartTotal"></span>
+        </div>
+        <div class="cart__ship">
+          <div class="cart__ship-bar"><div id="shipBar"></div></div>
+          <p id="shipMsg"></p>
+        </div>
+        <button class="btn btn-primary" id="checkoutBtn">CHECKOUT ✦</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Shop page specific logic
+    document.addEventListener('DOMContentLoaded', () => {
+      renderShopGrid();
+      setupShopViewToggle();
+    });
+
+    function renderShopGrid() {
+      const list = visibleProducts();
+      const grid = $('#shopGrid');
+      grid.innerHTML = list.map(p => cardHTML(p)).join('');
+      $('#resultCount').textContent = `${list.length} style${list.length !== 1 ? 's' : ''}`;
+      observeCards();
+      attachCardListeners();
+    }
+
+    function setupShopViewToggle() {
+      $('#gridView').addEventListener('click', () => {
+        $('#gridView').classList.add('is-active');
+        $('#listView').classList.remove('is-active');
+        $('#shopGrid').classList.remove('list-view');
+      });
+      $('#listView').addEventListener('click', () => {
+        $('#listView').classList.add('is-active');
+        $('#gridView').classList.remove('is-active');
+        $('#shopGrid').classList.add('list-view');
+      });
+    }
+
+    function attachCardListeners() {
+      const grid = $('#shopGrid');
+      grid.addEventListener('click', e => {
+        const card = e.target.closest('.card');
+        if (!card) return;
+        const id = card.dataset.id;
+        if (e.target.closest('[data-wish]')) return toggleWish(id, e.target.closest('[data-wish]'));
+        if (e.target.closest('[data-add]')) return addToCart(id, byId(id).colors[0].name, byId(id).sizes[0], 1);
+        if (e.target.closest('[data-qv]')) return openQuickView(id);
+      });
+    }
+
+    // Re-render on filter/sort change
+    $('#filters').addEventListener('click', e => {
+      const btn = e.target.closest('.pill');
+      if (!btn) return;
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      currentFilter = btn.dataset.filter;
+      renderShopGrid();
+    });
+
+    $('#sortSelect').addEventListener('change', e => {
+      currentSort = e.target.value;
+      renderShopGrid();
+    });
+
+    // Filter sidebar toggle on mobile
+    $('#filterToggle').addEventListener('click', () => {
+      $('#shopSidebar').classList.toggle('open');
+    });
+    $('#sidebarClose').addEventListener('click', () => {
+      $('#shopSidebar').classList.remove('open');
+    });
+
+    $('#yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

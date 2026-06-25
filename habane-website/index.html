@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HABÄNE — Carry the City</title>
+  <meta name="description" content="Habäne — premium smart duffels, weekenders & backpacks. Engineered to carry your whole world, skyline and all." />
+  <link rel="icon" href="assets/brand/logo-white.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- global svg path used by all rotating buttons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+    </defs>
+  </svg>
+
+  <!-- ============ RIBBON / MARQUEE (bonkers-style) ============ -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon__track">
+      <span>FREE SHIPPING ON EVERYTHING ✦ &nbsp;&nbsp; SMART DUFFELS — NOW LIVE ✦ &nbsp;&nbsp; CARRY THE CITY ✦ &nbsp;&nbsp; LIFETIME ZIPPER WARRANTY ✦ &nbsp;&nbsp; NEW DROP: METROPOLITAN SERIES ✦ &nbsp;&nbsp;</span>
+      <span>FREE SHIPPING ON EVERYTHING ✦ &nbsp;&nbsp; SMART DUFFELS — NOW LIVE ✦ &nbsp;&nbsp; CARRY THE CITY ✦ &nbsp;&nbsp; LIFETIME ZIPPER WARRANTY ✦ &nbsp;&nbsp; NEW DROP: METROPOLITAN SERIES ✦ &nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ============ NAV (blue) ============ -->
+  <header class="nav" id="nav">
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__links nav__links--left">
+      <a href="#shop">Shop</a>
+      <a href="#smart">Smart Series</a>
+      <a href="#showroom">3D Showroom</a>
+      <a href="#lookbook">Lookbook</a>
+    </nav>
+
+    <a class="nav__logo" href="#top">
+      <img src="assets/brand/logo-white.png" alt="Habäne" />
+    </a>
+
+    <nav class="nav__links nav__links--right">
+      <a href="#story">Story</a>
+      <button class="nav__icon nav__iconbtn" id="searchBtn" aria-label="Search">⌕</button>
+      <a href="#" class="nav__icon" aria-label="Account">◍</a>
+      <button class="nav__icon nav__iconbtn nav__cart" id="cartBtn" aria-label="Cart">⛁ <em id="cartCount">0</em></button>
+    </nav>
+  </header>
+
+  <!-- mobile drawer -->
+  <div class="drawer" id="drawer">
+    <a href="#shop">Shop</a>
+    <a href="#smart">Smart Series</a>
+    <a href="#showroom">3D Showroom</a>
+    <a href="#lookbook">Lookbook</a>
+    <a href="#story">Story</a>
+    <a href="#" class="drawer__cart" id="drawerCartLink">Cart (<span class="drawer-cart-count">0</span>)</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__glow"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow">EST. — CARRY THE CITY</p>
+        <h1 class="hero__title">
+          <span>BAGS THAT</span>
+          <span class="hero__title--metal">MOVE LIKE YOU.</span>
+        </h1>
+        <p class="hero__sub">Smart duffels, weekenders & backpacks engineered in metallic silver and midnight navy. Built for the people who never really unpack.</p>
+
+        <!-- rotating button (bluorng-style) -->
+        <div class="hero__cta">
+          <!-- Coin mascot animation replaces rotating buttons -->
+          <div class="coin-spinner" aria-hidden="true">
+            <svg viewBox="0 0 120 120" width="90" height="90" role="img" aria-label="Coin mascot">
+              <g transform="translate(10,10)">
+                <circle cx="50" cy="50" r="36" fill="#f7e9c9" stroke="#d6b55b" stroke-width="4" class="coin-rotate" />
+                <circle cx="50" cy="50" r="26" fill="#ffd" stroke="#f3d27a" stroke-width="2" />
+                <text x="50" y="56" text-anchor="middle" font-family="Montserrat, system-ui, sans-serif" font-weight="700" font-size="18" fill="#0b1240">HB</text>
+                <g class="coin-sparkle">
+                  <circle cx="88" cy="22" r="3" fill="#8fd4ec" />
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Location selector (home) -->
+          <div class="location-wrapper">
+            <label class="location-btn" for="countrySelect">Location
+              <select id="countrySelect" aria-label="Select country">
+                <option value="in">India</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="de">Germany</option>
+                <option value="au">Australia</option>
+                <option value="ca">Canada</option>
+                <option value="jp">Japan</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__marquee" aria-hidden="true">
+        <div class="hero__marquee-track">
+          <span>HABÄNE</span><span class="hollow">HABÄNE</span><span>HABÄNE</span><span class="hollow">HABÄNE</span><span>HABÄNE</span><span class="hollow">HABÄNE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip removed per request -->
+
+    <!-- ============ FEATURED PRODUCTS ============ -->
+    <section class="featured">
+      <div class="featured__head">
+        <h2 class="section-title">BESTSELLERS</h2>
+        <p class="section-sub">Shop the most loved carries from the collection.</p>
+      </div>
+      <div class="featured__grid" id="featuredGrid">
+        <!-- Featured products will be injected here -->
+      </div>
+      <div class="featured__cta">
+        <a href="shop.html" class="view-more-btn">
+          <span>View All Products</span>
+          <i>→</i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ SMART SERIES FEATURE ============ -->
+    <section class="smart" id="smart">
+      <div class="smart__media">
+        <img src="assets/products/p4-smart-duffel-ivory.jpg" alt="Habäne Smart Duffel" />
+        <span class="smart__tag">⚡ FAST CHARGE</span>
+      </div>
+      <div class="smart__copy">
+        <p class="hero__eyebrow">THE SMART SERIES</p>
+        <h2 class="smart__title">Your bag, but it <em>thinks.</em></h2>
+        <p>Built-in power bank, device check-in panel, RGB edge lighting and a touch media strip. The duffel that charges your phone while it carries your gym fit.</p>
+        <ul class="smart__feats">
+          <li>10,000mAh fast-charge core</li>
+          <li>Reactive RGB trim lighting</li>
+          <li>Smart check-in: phone · watch · buds</li>
+          <li>Water-repellent tech canvas</li>
+        </ul>
+        <a href="#" class="ghost-btn">EXPLORE SMART</a>
+      </div>
+    </section>
+
+    <!-- ============ 3D SHOWROOM ============ -->
+    <section class="showroom" id="showroom">
+      <div class="showroom__head">
+        <p class="hero__eyebrow">3D SHOWROOM</p>
+        <h2 class="section-title">SPIN IT. INSPECT IT.</h2>
+        <p class="section-sub">Drag to rotate · scroll to zoom · double-tap to recenter. Basically yours already.</p>
+      </div>
+
+      <div class="showroom__stage">
+        <model-viewer
+            id="viewer"
+            alt="Habäne luggage — interactive 3D model"
+            camera-controls
+            auto-rotate
+            auto-rotate-delay="0"
+            rotation-per-second="20deg"
+            interaction-prompt="auto"
+            shadow-intensity="1.1"
+            shadow-softness="0.9"
+            exposure="1.15"
+            environment-image="neutral"
+            camera-orbit="35deg 75deg 110%"
+            min-camera-orbit="auto auto 60%"
+            max-camera-orbit="auto auto 160%"
+            touch-action="pan-y">
+          <div class="showroom__loader" slot="poster">
+            <span class="showroom__spinner"></span>
+            <span>loading 3D…</span>
+          </div>
+        </model-viewer>
+
+        <div class="showroom__tools">
+          <button id="spinToggle" class="tool is-active">⟳ Auto-spin</button>
+          <button id="resetView" class="tool">⤢ Reset view</button>
+        </div>
+      </div>
+
+      <div class="showroom__pick" id="modelPick">
+        <button class="model-pick is-active" data-model="carryon">
+          <span class="model-pick__name">Carry-On</span>
+          <span class="model-pick__meta">Cabin · 38L</span>
+        </button>
+        <button class="model-pick" data-model="voyager">
+          <span class="model-pick__name">Voyager Case</span>
+          <span class="model-pick__meta">Check-in · 65L</span>
+        </button>
+        <button class="model-pick" data-model="cabin">
+          <span class="model-pick__name">Cabin Trunk</span>
+          <span class="model-pick__meta">Hard-shell · 45L</span>
+        </button>
+      </div>
+
+      <p class="showroom__credit">
+        3D models via <a href="https://poly.pizza" target="_blank" rel="noopener">Poly Pizza</a> — “Carry-on Luggage” by get wilde,
+        “Suitcase” by J-Toastie &amp; “Simple Suitcase” by Don Carson (CC-BY).
+      </p>
+    </section>
+
+    <!-- ============ MARQUEE STRIP ============ -->
+    <div class="strip" aria-hidden="true">
+      <div class="strip__track">
+        <span>CARRY THE CITY ✶ MIDNIGHT NAVY ✶ METALLIC SILVER ✶ SMART INSIDE ✶ CARRY THE CITY ✶ MIDNIGHT NAVY ✶ METALLIC SILVER ✶ SMART INSIDE ✶ </span>
+        <span>CARRY THE CITY ✶ MIDNIGHT NAVY ✶ METALLIC SILVER ✶ SMART INSIDE ✶ CARRY THE CITY ✶ MIDNIGHT NAVY ✶ METALLIC SILVER ✶ SMART INSIDE ✶ </span>
+      </div>
+    </div>
+
+    <!-- ============ LOOKBOOK ============ -->
+    <section class="look" id="lookbook">
+      <div class="look__head">
+        <h2 class="section-title">THE LOOKBOOK</h2>
+        <p class="section-sub">Skylines you can sling over your shoulder.</p>
+      </div>
+      <div class="look__grid">
+        <figure class="look__item look__item--tall">
+          <img src="assets/products/p2-navy-metropolitan-duffel.jpg" alt="Metropolitan duffel" />
+          <figcaption>Metropolitan — Navy</figcaption>
+        </figure>
+        <figure class="look__item">
+          <img src="assets/products/p1-olive-skyline-duffel.jpg" alt="Olive skyline duffel" />
+          <figcaption>Skyline — Olive</figcaption>
+        </figure>
+        <figure class="look__item">
+          <img src="assets/products/p3-navy-voyager-duffel.jpg" alt="Voyager duffel" />
+          <figcaption>Voyager — Navy</figcaption>
+        </figure>
+        <figure class="look__item look__item--wide">
+          <img src="assets/products/p5-steel-blue-weekender.jpg" alt="Steel blue weekender" />
+          <figcaption>Weekender — Steel Blue</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ STORY / MARQUEE LOGO ============ -->
+    <section class="story" id="story">
+      <div class="story__inner">
+        <h2 class="story__title">We make bags for people who<br><span>can't sit still.</span></h2>
+        <p>Habäne started with one idea — your luggage should keep up with your life, not slow it down. Every piece is built in our signature midnight navy and metallic silver, printed with hand-drawn skylines, and engineered to survive the chaos of actually going places.</p>
+        <div class="story__stats">
+          <div><strong>40k+</strong><span>bags out in the wild</span></div>
+          <div><strong>4.9★</strong><span>avg. obsessed reviews</span></div>
+          <div><strong>∞</strong><span>zipper warranty</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ UGC / INSTA WALL ============ -->
+    <section class="ugc" id="ugc">
+      <div class="ugc__head">
+        <h2 class="section-title">#CARRYTHECITY</h2>
+        <p class="section-sub">Tag <strong>@habane</strong> — you might just end up here. main character energy only. ✦</p>
+      </div>
+      <div class="ugc__grid">
+        <a class="ugc__item" href="#"><img src="assets/products/p1-olive-skyline-duffel.jpg" alt=""><span class="ugc__tag">@cityrat.exe</span><span class="ugc__heart">♥ 2.4k</span></a>
+        <a class="ugc__item" href="#"><img src="assets/products/alt-black-backpack.jpg" alt=""><span class="ugc__tag">@notyouravg</span><span class="ugc__heart">♥ 1.1k</span></a>
+        <a class="ugc__item" href="#"><img src="assets/products/p2-navy-metropolitan-duffel.jpg" alt=""><span class="ugc__tag">@onmyway</span><span class="ugc__heart">♥ 3.8k</span></a>
+        <a class="ugc__item" href="#"><img src="assets/products/p8-grey-sling.jpg" alt=""><span class="ugc__tag">@lowkey.iconic</span><span class="ugc__heart">♥ 980</span></a>
+        <a class="ugc__item" href="#"><img src="assets/products/alt-white-duffel.jpg" alt=""><span class="ugc__tag">@packlight</span><span class="ugc__heart">♥ 5.2k</span></a>
+        <a class="ugc__item" href="#"><img src="assets/products/p7-heritage-backpack.jpg" alt=""><span class="ugc__tag">@touchgrass</span><span class="ugc__heart">♥ 1.7k</span></a>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="faq__head">
+        <h2 class="section-title">THE TEA ☕</h2>
+        <p class="section-sub">aka the questions everyone slides into our DMs about.</p>
+      </div>
+      <div class="faq__list" id="faqList">
+        <details class="faq__item">
+          <summary>is the smart duffel actually smart or is it just vibes?</summary>
+          <p>Genuinely smart. 10,000mAh fast-charge core, RGB trim and a device check-in panel. The vibes are just a bonus. ⚡</p>
+        </details>
+        <details class="faq__item">
+          <summary>how fast is shipping? i'm impatient</summary>
+          <p>Same valid. Metro cities 2–4 days, rest of India 4–7. Free over ₹4,999, and you'll get tracking the second it ships. 🚚</p>
+        </details>
+        <details class="faq__item">
+          <summary>what if it doesn't hit the same in person?</summary>
+          <p>7-day no-drama returns. If it's not giving what you wanted, send it back. Refund or swap, your call. ↩️</p>
+        </details>
+        <details class="faq__item">
+          <summary>are these gonna fall apart in a month?</summary>
+          <p>Absolutely not. Lifetime zipper warranty, reinforced stitching, water-repellent canvas. Built to outlive your situationships. ♾️</p>
+        </details>
+        <details class="faq__item">
+          <summary>do you do COD? i don't trust the internet</summary>
+          <p>Yep, cash on delivery available nationwide. Pay when it physically lands in your hands. 💸</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="news">
+      <div class="news__inner">
+        <h2>GET ON THE LIST<span>.</span></h2>
+        <p>Drops, restocks, and the occasional unhinged email. No spam, pinky promise.</p>
+        <form class="news__form" id="newsForm">
+          <input type="email" placeholder="your@email.here" required />
+          <button type="submit" class="join-btn">
+            <span class="join-coin" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="34" height="34">
+                <circle cx="20" cy="20" r="12" fill="#f7e9c9" stroke="#d6b55b" stroke-width="2" class="coin-rotate" />
+                <text x="20" y="24" text-anchor="middle" font-family="Montserrat, system-ui, sans-serif" font-weight="700" font-size="10" fill="#0b1240">HB</text>
+              </svg>
+            </span>
+            <span class="join-label">JOIN</span>
+          </button>
+        </form>
+        <p class="news__done" id="newsDone"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER (gen-z) ============ -->
+  <footer class="foot">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <img src="assets/brand/wordmark-silver.png" alt="Habäne" class="foot__word" />
+        <p class="foot__tag">Carry the city. Leave the baggage.</p>
+        <div class="foot__social">
+          <a href="#">IG</a><a href="#">TT</a><a href="#">YT</a><a href="#">X</a>
+        </div>
+      </div>
+
+      <div class="foot__col">
+        <h4>The Goods</h4>
+        <a href="#shop">Duffels</a>
+        <a href="#shop">Backpacks</a>
+        <a href="#smart">Smart Series</a>
+        <a href="#shop">Slings</a>
+      </div>
+
+      <div class="foot__col">
+        <h4>Lowkey Iconic</h4>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#story">Our Lore</a>
+        <a href="#">The Drop List</a>
+        <a href="#">Gift Cards fr</a>
+      </div>
+
+      <!-- the gen-z "boring stuff" column -->
+      <div class="foot__col foot__col--boring">
+        <h4>Boring Stuff 🥱</h4>
+        <a href="#">Shipping &amp; whatnot</a>
+        <a href="#">Returns (it's giving easy)</a>
+        <a href="#">Privacy, ig</a>
+        <a href="#">Terms &amp; conditions 💤</a>
+        <a href="#">Adulting (Contact us)</a>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <p>© <span id="yr"></span> Habäne. All rights reserved. No cap.</p>
+      <p class="foot__vibe">Made with chaotic good energy ✦ Carry the city</p>
+    </div>
+  </footer>
+
+  <!-- ============ SEARCH OVERLAY ============ -->
+  <div class="search-pop" id="searchPop" aria-hidden="true">
+    <div class="search-pop__inner">
+      <input type="text" id="searchInput" placeholder="Search bags, e.g. ‘smart duffel’…" autocomplete="off" />
+      <button class="search-pop__close" id="searchClose" aria-label="Close">✕</button>
+      <div class="search-pop__results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ============ QUICK VIEW MODAL ============ -->
+  <div class="qv" id="quickView" aria-hidden="true">
+    <div class="qv__overlay" data-close></div>
+    <div class="qv__panel" role="dialog" aria-modal="true">
+      <button class="qv__close" data-close aria-label="Close">✕</button>
+      <div class="qv__media">
+        <img id="qvImg" src="" alt="" />
+        <span class="qv__badge" id="qvBadge"></span>
+      </div>
+      <div class="qv__info">
+        <span class="qv__cat" id="qvCat"></span>
+        <h3 class="qv__name" id="qvName"></h3>
+        <div class="qv__rate" id="qvRate"></div>
+        <div class="qv__price" id="qvPrice"></div>
+        <p class="qv__desc" id="qvDesc"></p>
+
+        <div class="qv__block">
+          <span class="qv__label">Colour: <em id="qvColorName"></em></span>
+          <div class="qv__colors" id="qvColors"></div>
+        </div>
+
+        <div class="qv__block">
+          <span class="qv__label">Size</span>
+          <div class="qv__sizes" id="qvSizes"></div>
+        </div>
+
+        <div class="qv__actions">
+          <div class="qv__qty">
+            <button data-step="-1" aria-label="Decrease">−</button>
+            <span id="qvQty">1</span>
+            <button data-step="1" aria-label="Increase">+</button>
+          </div>
+          <button class="qv__add" id="qvAdd">ADD TO CART</button>
+        </div>
+        <ul class="qv__perks">
+          <li>✦ Free shipping over ₹4,999</li>
+          <li>✦ 7-day easy returns</li>
+          <li>✦ Lifetime zipper warranty</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart" id="cart" aria-hidden="true">
+    <div class="cart__overlay" data-cart-close></div>
+    <aside class="cart__panel" role="dialog" aria-modal="true" aria-label="Cart">
+      <header class="cart__head">
+        <h3>Your Bag <span id="cartItems">(0)</span></h3>
+        <button class="cart__close" data-cart-close aria-label="Close">✕</button>
+      </header>
+
+      <div class="cart__ship">
+        <p id="shipMsg">Add ₹4,999 more for <strong>free shipping</strong> ✦</p>
+        <div class="cart__bar"><span id="shipBar"></span></div>
+      </div>
+
+      <div class="cart__body" id="cartBody"><!-- line items --></div>
+
+      <div class="cart__empty" id="cartEmpty">
+        <p class="cart__empty-emoji">🧳</p>
+        <p>Your bag's feeling light.</p>
+        <span>Go add something iconic.</span>
+        <button class="cart__empty-btn" data-cart-close>START SHOPPING</button>
+      </div>
+
+      <footer class="cart__foot" id="cartFoot">
+        <div class="cart__promo" id="cartPromo" hidden>
+          <span class="cart__promo-chip" id="cartPromoChip">HABÄNE10</span>
+          <span class="cart__promo-txt">discount applied — slay 💅</span>
+        </div>
+        <div class="cart__row"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+        <div class="cart__row cart__row--disc" id="cartDiscRow" hidden><span>Discount</span><strong id="cartDisc">−₹0</strong></div>
+        <div class="cart__row cart__row--total" id="cartTotalRow" hidden><span>Total</span><strong id="cartTotal">₹0</strong></div>
+        <p class="cart__note">Taxes &amp; shipping calculated at checkout. No cap.</p>
+        <button class="cart__checkout" id="checkoutBtn">CHECKOUT ✦</button>
+        <button class="cart__continue" data-cart-close>or keep browsing</button>
+      </footer>
+    </aside>
+  </div>
+
+  <!-- ============ CHECKOUT SUCCESS ============ -->
+  <div class="done" id="checkoutDone" aria-hidden="true">
+    <div class="done__overlay" data-done-close></div>
+    <div class="done__panel">
+      <div class="done__check">✓</div>
+      <h3>Order placed, fr fr 🎉</h3>
+      <p id="doneMsg">Your bags are on the way. We'll slide into your inbox with tracking.</p>
+      <p class="done__order">Order <strong id="doneOrder"></strong></p>
+      <button class="done__btn" data-done-close>KEEP SHOPPING</button>
+    </div>
+  </div>
+
+  <!-- ============ SPIN TO WIN (discount) ============ -->
+  <div class="wheel" id="wheel" aria-hidden="true">
+    <div class="wheel__overlay" data-wheel-close></div>
+    <div class="wheel__panel" role="dialog" aria-modal="true">
+      <button class="wheel__close" data-wheel-close aria-label="Close">✕</button>
+      <div class="wheel__left">
+        <p class="wheel__eyebrow">NO CAP, FREE MONEY</p>
+        <h3 class="wheel__title">Spin for a<br><span>discount 🎰</span></h3>
+        <p class="wheel__sub">One spin per main character. Drop your email, spin the wheel, and we'll auto-apply whatever you land on at checkout.</p>
+        <form id="wheelForm" class="wheel__form">
+          <input type="email" id="wheelEmail" placeholder="your@email.here" required />
+          <button type="submit" class="wheel__spin" id="wheelSpin">SPIN IT ✦</button>
+        </form>
+        <p class="wheel__skip" data-wheel-close>nah, i hate saving money →</p>
+        <p class="wheel__result" id="wheelResult"></p>
+      </div>
+      <div class="wheel__right">
+        <div class="wheel__wrap">
+          <div class="wheel__pointer">▼</div>
+          <div class="wheel__disc" id="wheelDisc">
+            <span style="--i:0">10% OFF</span>
+            <span style="--i:1">FREE SHIP</span>
+            <span style="--i:2">5% OFF</span>
+            <span style="--i:3">15% OFF</span>
+            <span style="--i:4">TRY AGAIN</span>
+            <span style="--i:5">20% OFF</span>
+          </div>
+          <div class="wheel__hub">✦</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating spin-to-win button -->
+  <button class="spin-fab" id="spinFab">🎰 <span>Spin&nbsp;to&nbsp;win</span></button>
+
+  <!-- toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- 3D: model-viewer library (CDN) + embedded models (local, base64) -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+  <script src="assets/3d/models.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
